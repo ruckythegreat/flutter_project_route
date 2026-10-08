@@ -2,17 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+   HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 157, 153, 255),
+      backgroundColor:  Color.fromARGB(255, 157, 153, 255),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+             Text(
               'Home',
               style: TextStyle(
                 fontSize: 40,
@@ -20,7 +20,7 @@ class HomePage extends StatelessWidget {
                 fontWeight: FontWeight.bold,
               ),
             ),
-            const SizedBox(height: 20),
+             SizedBox(height: 20),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.white,
@@ -29,7 +29,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Get.toNamed('/input-bmi');
               },
-              child: const Text('Input Bmi'),
+              child:  Text('Input Bmi'),
             ),
             ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -39,7 +39,7 @@ class HomePage extends StatelessWidget {
               onPressed: () {
                 Get.toNamed('/toko-home');
               },
-              child: const Text('Toko Online'),
+              child:  Text('Toko Online'),
             ),
 
           ],

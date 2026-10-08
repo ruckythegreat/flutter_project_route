@@ -4,17 +4,15 @@ import 'home.dart' as home;
 import 'BMI/input_bmi.dart';
 import 'BMI/hasil_bmi.dart';
 import 'Toko/Homepage.dart' as Toko;
-import 'Toko/toko_controller.dart';
 import 'Toko/Pembayaran.dart';
 import 'Toko/MainMenu.dart';
 
-
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,11 +22,11 @@ class MyApp extends StatelessWidget {
       initialRoute: '/',
       getPages: [
         GetPage(name: '/', page: () => home.HomePage()),
-        GetPage(name: '/input-bmi', page: () =>  InputBmiPage()),
-        GetPage(name: '/hasil-bmi', page: () =>  HasilBmiPage()),
-        GetPage(name: '/toko-home', page: () =>  Toko.HomePage()),
-
-        GetPage(name: '/toko-mainmenu', page: () =>  MainMenuPage()),
+        GetPage(name: '/input-bmi', page: () => InputBmiPage()),
+        GetPage(name: '/hasil-bmi', page: () => HasilBmiPage()),
+        GetPage(name: '/toko-home', page: () => Toko.HomePage()),
+        GetPage(name: '/toko-pembayaran', page: () =>  PembayaranPage()),
+        GetPage(name: '/toko-mainmenu', page: () => MainMenuPage()),
       ],
     );
   }

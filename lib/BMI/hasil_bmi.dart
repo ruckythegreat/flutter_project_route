@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class HasilBmiPage extends StatelessWidget {
-  const HasilBmiPage({super.key});
+   HasilBmiPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,24 +12,24 @@ class HasilBmiPage extends StatelessWidget {
     final kategori = args['kategori'] ?? '-';
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Hasil BMI')),
+      appBar: AppBar(title:  Text('Hasil BMI')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Text('Nama: $nama', style: const TextStyle(fontSize: 20)),
+            Text('Nama: $nama', style:  TextStyle(fontSize: 20)),
             Text(
               'Nilai BMI: ${bmi.toStringAsFixed(1)}',
-              style: const TextStyle(fontSize: 24),
+              style:  TextStyle(fontSize: 24),
             ),
-            Text('Kategori: $kategori', style: const TextStyle(fontSize: 20)),
-            const SizedBox(height: 40),
+            Text('Kategori: $kategori', style:  TextStyle(fontSize: 20)),
+             SizedBox(height: 40),
 
             ElevatedButton(
               onPressed: () {
                 Get.offAllNamed('/');
               },
-              child: const Text('Kembali ke Home'),
+              child:  Text('Kembali ke Home'),
             ),
           ],
         ),

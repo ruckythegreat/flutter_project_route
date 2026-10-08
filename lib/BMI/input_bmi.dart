@@ -29,10 +29,10 @@ class InputBmiPage extends StatelessWidget {
               keyboardType: TextInputType.number,
               decoration: InputDecoration(labelText: 'Tinggi (cm)'),
             ),
-            const SizedBox(height: 20),
+             SizedBox(height: 20),
             ElevatedButton(
               onPressed: controller.prosesHitung,
-              child: const Text('Hitung'),
+              child:  Text('Hitung'),
             ),
           ],
         ),

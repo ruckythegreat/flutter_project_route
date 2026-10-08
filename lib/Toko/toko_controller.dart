@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'Pembayaran.dart';
 
 class TokoController extends GetxController {
   final usernameC = TextEditingController();
@@ -17,70 +18,36 @@ class TokoController extends GetxController {
     String password = passwordC.text;
 
     if (username == 'NAgi' && password == 'Raka') {
-
       Get.bottomSheet(
-        Container(
-          color: Colors.white,
-          child: Wrap(
-            children: [
-              const ListTile(
-                title: Text(
-                  'Pilih Metode Pembayaran',
-                  style: TextStyle(fontWeight: FontWeight.bold),
-                ),
-              ),
-              ListTile(
-                leading: const Icon(Icons.account_balance),
-                title: const Text('Transfer'),
-                onTap: () => lanjutKeMainMenu(username, 'Transfer'),
-              ),
-              ListTile(
-                leading: const Icon(Icons.account_balance_wallet),
-                title: const Text('E-Wallet'),
-                onTap: () => lanjutKeMainMenu(username, 'E-Wallet'),
-              ),
-              ListTile(
-                leading: const Icon(Icons.money),
-                title: const Text('COD'),
-                onTap: () => lanjutKeMainMenu(username, 'COD'),
-              ),
-            ],
-          ),
-        ),
+        MetodeBayarSheet(),
+        backgroundColor: Colors.white,
       );
     } else {
-
       Get.snackbar(
         'Login Gagal',
-        'Username atau password salah!',
-        snackPosition: SnackPosition.BOTTOM,
-        backgroundColor: Colors.red,
-        colorText: Colors.white,
+        'Password salah',
+        snackPosition: SnackPosition.TOP,
       );
     }
   }
 
-  void lanjutKeMainMenu(String username, String metode) {
+  void lanjutKeMainMenu(String metode) {
     Get.back();
     Get.offNamed('/toko-mainmenu', arguments: {
-      'username': username,
+      'username': usernameC.text,
       'metode': metode,
     });
   }
 
-  void logout() {
-
+  void konfirmasiLogout() {
     Get.defaultDialog(
-      title: 'Konfirmasi',
-      middleText: 'Apakah Anda yakin ingin keluar?',
-      textConfirm: 'Ya, Keluar',
-      textCancel: 'Batal',
-      confirmTextColor: Colors.white,
-      onConfirm: () {
-        usernameC.clear();
-        passwordC.clear();
-        Get.offAllNamed('/toko-home');
-      },
+      title: 'Keluar',
+      middleText: 'Yakin?',
+      onConfirm: logout,
     );
+  }
+
+  void logout() {
+    Get.offAllNamed('/toko-home');
   }
 }

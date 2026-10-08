@@ -10,33 +10,33 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Login Toko')),
+      appBar: AppBar(title:  Text('Login Toko')),
       body: Padding(
-        padding: const EdgeInsets.all(16.0),
+        padding:  EdgeInsets.all(16.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text(
+             Text(
               'Silakan Login',
               style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
-            const SizedBox(height: 20),
+             SizedBox(height: 20),
             TextField(
               controller: c.usernameC,
-              decoration: const InputDecoration(labelText: 'Username'),
+              decoration:  InputDecoration(labelText: 'Username'),
             ),
             TextField(
               controller: c.passwordC,
-              decoration: const InputDecoration(labelText: 'Password'),
+              decoration:  InputDecoration(labelText: 'Password'),
               obscureText: true,
             ),
-            const SizedBox(height: 30),
+             SizedBox(height: 30),
             ElevatedButton(
               onPressed: c.login,
               style: ElevatedButton.styleFrom(
-                minimumSize: const Size(double.infinity, 50),
+                minimumSize:  Size(double.infinity, 50),
               ),
-              child: const Text('Login'),
+              child:  Text('Login'),
             ),
           ],
         ),
