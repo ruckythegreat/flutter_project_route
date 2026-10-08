@@ -7,7 +7,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.amber[400],
+      backgroundColor: const Color.fromARGB(255, 157, 153, 255),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -31,6 +31,17 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Input Bmi'),
             ),
+            ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.white,
+                foregroundColor: Colors.blueGrey,
+              ),
+              onPressed: () {
+                Get.toNamed('/toko-home');
+              },
+              child: const Text('Toko Online'),
+            ),
+
           ],
         ),
       ),
