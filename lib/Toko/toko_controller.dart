@@ -33,10 +33,9 @@ class TokoController extends GetxController {
 
   void lanjutKeMainMenu(String metode) {
     Get.back();
-    Get.offNamed('/toko-mainmenu', arguments: {
-      'username': usernameC.text,
-      'metode': metode,
-    });
+    
+    String nama = usernameC.text;
+    Get.offNamed('/toko-mainmenu?username=$nama&metode=$metode');
   }
 
   void konfirmasiLogout() {
