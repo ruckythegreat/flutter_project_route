@@ -16,7 +16,7 @@ class TokoController extends GetxController {
     String username = usernameC.text;
     String password = passwordC.text;
 
-    if (username == 'admin' && password == 'admin') {
+    if (username == 'NAgi' && password == 'Raka') {
 
       Get.bottomSheet(
         Container(
